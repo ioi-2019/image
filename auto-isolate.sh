@@ -10,6 +10,6 @@ sudo sh -c 'echo kernel.randomize_va_space = 0 >> /etc/sysctl.d/01-disable-aslr.
 
 #disable hugepage-related: 
 sudo apt install sysfsutils
-sudo sh -c 'kernel/mm/transparent_hugepage/enabled = never >> /etc/sysfs.conf'
-sudo sh -c 'kernel/mm/transparent_hugepage/defrag = never >> /etc/sysfs.conf'
-sudo sh -c 'kernel/mm/transparent_hugepage/khugepaged/defrag = 0 >> /etc/sysfs.conf'
+sudo sh -c 'echo kernel/mm/transparent_hugepage/enabled = never >> /etc/sysfs.conf'
+sudo sh -c 'echo kernel/mm/transparent_hugepage/defrag = never >> /etc/sysfs.conf'
+sudo sh -c 'echo kernel/mm/transparent_hugepage/khugepaged/defrag = 0 >> /etc/sysfs.conf'
