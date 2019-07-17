@@ -45,7 +45,7 @@ apt -y upgrade
 # ----- Install software from Ubuntu repositories -----
 
 # Compilers
-apt -y install gcc-=7.4 g++=7.4 openjdk-8-jdk openjdk-8-source
+apt -y install gcc-7 g++-7 openjdk-8-jdk openjdk-8-source
 
 # Editors and IDEs
 # Firtsly I have tried  to add repository of atom and install there but it didn't success
