@@ -1,0 +1,27 @@
+# Run these commands in root environment
+
+# Step 1
+# Add the repo and install the agent
+wget http://repo.zabbix.com/zabbix/4.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.2-1%2Bbionic_all.deb
+dpkg -i zabbix-release_4.2-1+bionic_all.deb
+apt update
+apt install zabbix-agent -y
+
+# Step 2
+# Clear the config and add the necessary parameters
+echo "" > /etc/zabbix/zabbix_agentd.conf
+echo "
+PidFile=/var/run/zabbix/zabbix_agentd.pid
+LogFile=/var/log/zabbix/zabbix_agentd.log
+LogFileSize=0
+Server=172.30.20.99
+Hostname=monitoringsrv
+Include=/etc/zabbix/zabbix_agentd.d/*.conf
+" >> /etc/zabbix/zabbix_agentd.conf
+
+# Step 3
+# Allow firewall (just in case) and restart the agent while adding to start-up
+ufw allow 10050/tcp
+systemctl restart zabbix-agent
+systemctl enable zabbix-agent
+
