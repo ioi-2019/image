@@ -5,6 +5,7 @@ cd /usr/share/applications/
 
 # -------------------- Creating Desktop Entries
 
+# -------------------- Documentations
 # Python2.7 documentation entry
 cat << EOF > python2.7-doc.desktop
 [Desktop Entry]
@@ -29,20 +30,6 @@ Exec=firefox /usr/share/doc/python3.6/html/index.html
 Terminal=false
 Categories=Documentation;Python3.6;
 EOF
-
-
-# cat << EOF > eclipse.desktop
-# [Desktop Entry]
-# Type=Application
-# Name=Eclipse Neon
-# Comment=Eclipse Integrated Development Environment
-# Icon=/opt/eclipse-4.6/icon.xpm
-# Exec=eclipse
-# Terminal=false
-# Categories=Development;IDE;Java;
-# EOF
-
-
 
 # C/CPP documentation entry
 cat << EOF > c-cpp-doc.desktop
@@ -79,6 +66,9 @@ Exec=firefox /usr/share/doc/stl-manual/html/index.html
 Terminal=false
 Categories=Documentation;STL;
 EOF
+
+
+# -------------------- Applications
 
 # Nano
 cat << EOF > nano.desktop
@@ -125,7 +115,7 @@ chown aydin:aydin "$HOME/Desktop/Docs"/*
 # ------------------- Copying Entries to the Folders
 
 # Copy Editors and IDEs
-for i in atom codeblocks emacs25 geany gedit joe org.kde.kate org.kde.kdevelop nano sublime_text vim gvim
+for i in atom codeblocks emacs25 geany gedit intellij-idea-community joe org.kde.kate org.kde.kdevelop nano sublime_text vim gvim
 do
     cp "$i.desktop" "$HOME/Desktop/Editors & IDEs"
 done
