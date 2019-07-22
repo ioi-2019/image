@@ -30,18 +30,6 @@ Terminal=false
 Categories=Documentation;Python3.6;
 EOF
 
-cat << EOF > atom.desktop
-[Desktop Entry]
-Version=1.38.2
-Type=Application
-Name=Atom
-Comment=Atom IDE
-Categories=IDE;
-Exec=/snap/bin/atom
-Icon=/snap/atom/232/usr/share/pixmaps/atom.png
-Terminal=false
-Categories=Development;IDE;
-EOF
 
 # cat << EOF > eclipse.desktop
 # [Desktop Entry]
@@ -92,17 +80,55 @@ Terminal=false
 Categories=Documentation;STL;
 EOF
 
-# ----------------- Creating Appropriet Folders to Locate Entries on The Desktop
+# Nano
+cat << EOF > nano.desktop
+[Desktop Entry]
+Version=2.9.3
+Type=Application
+Name=Nano
+Comment=Nano Text Editor
+TryExec=nano
+Exec=/bin/nano %F
+Terminal=true
+Type=Application
+Keywords=Text;editor;
+Icon=nano
+Categories=Utility;TextEditor;
+StartupNotify=false
+EOF
+
+# Atom
+cat << EOF > atom.desktop
+[Desktop Entry]
+Version=1.38.2
+Type=Application
+Name=Atom
+Comment=Atom IDE
+Categories=TextEditor;IDE;
+Exec=/snap/bin/atom
+Icon=/snap/atom/232/usr/share/pixmaps/atom.png
+Terminal=false
+Categories=Development;IDE;
+EOF
+
+
+# ----------------- Creating appropriet folders to locate entries on the desktop
 mkdir -p "$HOME/Desktop/Editors & IDEs"
 mkdir -p "$HOME/Desktop/Utils"
 mkdir -p "$HOME/Desktop/Docs"
 
+# ------------------- Changing ownership of the directories and .desktop files
+chown aydin:aydin "$HOME/Desktop/Editors & IDEs"/*
+chown aydin:aydin "$HOME/Desktop/Utils"/*
+chown aydin:aydin "$HOME/Desktop/Docs"/*
+
 # ------------------- Copying Entries to the Folders
+
 # Copy Editors and IDEs
-#for i in atom codeblocks emacs25 geany gedit joe org.kde.kate org.kde.kdevelop nano sublime_text
-#do
- #   cp "$i.desktop" "$HOME/Desktop/Editors & IDEs"
-#done
+for i in atom codeblocks emacs25 geany gedit joe org.kde.kate org.kde.kdevelop nano sublime_text vim gvim
+do
+    cp "$i.desktop" "$HOME/Desktop/Editors & IDEs"
+done
 
 # Copy Docs
 for i in c-cpp-doc stl-manual java-doc python2.7-doc python3.6-doc
@@ -111,17 +137,14 @@ do
 done
 
 # Copy Utils
-for i in firefox ddd  gnome-terminal org.kde.konsole mc byobu
+for i in firefox gnome-terminal org.kde.konsole mc byobu
 do
     cp "$i.desktop" "$HOME/Desktop/Utils"
 done
 
-# ----------------- Changing Ownership
-chown -R $USER "$HOME/Desktop/Editors & IDEs"
-chown -R $USER "$HOME/Desktop/Utils"
-chown -R $USER "$HOME/Desktop/Docs"
+# ------------------- Adding executative permission to all .desktop files
+chmod a+x "$HOME/Desktop/Editors & IDEs"/*.desktop
+chmod a+x "$HOME/Desktop/Utils"/*.desktop
+chmod a+x "$HOME/Desktop/Docs"/*.desktop
 
-# ----------------- Adding execution permission
-chmod +x "$HOME/Desktop/Editors & IDEs/*.desktop"
-chmod +x "$HOME/Desktop/Utils/*.desktop"
-chmod +x "$HOME/Desktop/Docs/*.desktop" 
+
