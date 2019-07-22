@@ -2,4 +2,4 @@
 Description=Contestant home folder backup service
 
 [Service]
-ExecStart=/bin/bash ~/backup.sh
+ExecStart=/bin/bash /home/contestant/backup.sh
