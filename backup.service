@@ -2,4 +2,5 @@
 Description=Contestant home folder backup service
 
 [Service]
-ExecStart=/bin/bash /home/contestant/backup.sh
+User=ansible
+ExecStart=/bin/bash /home/ansible/backup.sh
