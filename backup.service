@@ -1,0 +1,5 @@
+[Unit]
+Description=Contestant home folder backup service
+
+[Service]
+ExecStart=/bin/bash ~/backup.sh

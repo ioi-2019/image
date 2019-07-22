@@ -1,0 +1,9 @@
+[Unit]
+Description=Contestant home folder backup timer
+
+[Timer]
+OnUnitActiveSec=1h
+Unit=backup.service
+
+[Install]
+WantedBy=multi-user.target
