@@ -1,0 +1,21 @@
+# Run these commands in a user called ansible home folder
+
+# Step 1
+# Copy backup.sh and clear-zip.sh files to /home/ansible folder and run:
+chmod +x backup.sh clear-zip.sh
+
+# Step 2
+# Copy backup.service and backup.timer files to /etc/systemd/system folder and run:
+sudo systemctl enable backup.timer
+sudo systemctl start backup.timer
+
+# Step 3
+# Check the status of backup.timer to make sure the next run will be in 5 minutes
+systemctl status backup.timer
+
+# P.S. For the backup.sh script to be successfully run, the following must be true:
+# - Network must be up and running
+# --- IP address should be available
+# - ansible user's public/private key pair should be in ~/.ssh/ folder
+# --- id_rsa.pub and id_rsa SHOULD be the name of these files
+# - ansible user's private key should be in ioibckp server's /home/ioibckp/.ssh/authorized_keys file
