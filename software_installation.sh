@@ -102,6 +102,8 @@ apt -y install sublime-text
 # Eclipse 2019-03(4.11) + JDT & CDT 9.7
 wget eclipse.mirror.rafal.ca/technology/epp/downloads/release/2019-03/R/eclipse-java-2019-03-R-linux-gtk-x86_64.tar.gz
 tar xzvf eclipse-java-2019-03-R-linux-gtk-x86_64.tar.gz -C /opt/
+rm -rf eclipse-java-2019-03-R-linux-gtk-x86_64.tar.gz
+
 # ---------- CDT 9.7
 /opt/eclipse-4.11/eclipse -application org.eclipse.equinox.p2.director -noSplash -repository http://download.eclipse.org/releases/2019-03 \
 -installIUs \
