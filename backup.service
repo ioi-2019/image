@@ -2,5 +2,9 @@
 Description=Contestant home folder backup service
 
 [Service]
+Type=oneshot
 User=ansible
 ExecStart=/bin/bash /home/ansible/backup.sh
+RemainAfterExit=true
+ExecStop=/bin/bash /home/ansible/clear-zip.sh
+StandardOutput=journal
