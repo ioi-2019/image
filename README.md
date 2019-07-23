@@ -10,3 +10,4 @@
 **backup.timer** - 5min systemd timer file that needs to be enabled on contestant machines
 
 # Monitoring
+**contestant_worker_zabbix_agent.txt** - Steps needed to install zabbix monitoring agent on laptops
