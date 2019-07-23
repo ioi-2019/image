@@ -20,10 +20,10 @@ EOF
 # ---------------------------- Adding Missing Repositories
 
 # Code::Blocks
-add-apt-repository -y ppa:damien-moore/codeblocks-stable
+#add-apt-repository -y ppa:damien-moore/codeblocks-stable
 
 # Emacs
-add-apt-repository ppa:kelleyk/emacs
+add-apt-repository -y ppa:kelleyk/emacs
 
 # Intellij Idea Community
 add-apt-repository -y ppa:mmk2410/intellij-idea
@@ -36,7 +36,7 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.
 
 
 # ----------------------------- Adding New Packege Control Systems
-apt -y get snap
+apt -y install snap
 
 
 # ----------------------------- Updating Package List
