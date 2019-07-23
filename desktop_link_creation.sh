@@ -1,3 +1,11 @@
+#!/bin/bash
+
+# Bash script for building the IOI 2019 contest image | Desktop Link Creation Phase
+# Version: 1.2
+# http://ioi2019.az/
+
+
+
 # ******************************* CREATION OF THE DESKTOP ENTRIES AND LOCATING THEM IN FOLDERS ON THE DESKTOP
 
 # -------------------- Changing Directory To Create Desktop Entries
@@ -87,6 +95,18 @@ Categories=Utility;TextEditor;
 StartupNotify=false
 EOF
 
+# Eclipse
+cat << EOF > eclipse.desktop
+[Desktop Entry]
+Type=Application
+Name=Eclipse Neon
+Comment=Eclipse Integrated Development Environment
+Icon=/opt/eclipse-4.11/icon.xpm
+Exec=eclipse
+Terminal=false
+Categories=Development;IDE;Java;
+EOF
+
 # Atom
 cat << EOF > atom.desktop
 [Desktop Entry]
@@ -108,9 +128,9 @@ mkdir -p "$HOME/Desktop/Utils"
 mkdir -p "$HOME/Desktop/Docs"
 
 # ------------------- Changing ownership of the directories and .desktop files
-chown aydin:aydin "$HOME/Desktop/Editors & IDEs"/*
-chown aydin:aydin "$HOME/Desktop/Utils"/*
-chown aydin:aydin "$HOME/Desktop/Docs"/*
+chown $USER:$USER "$HOME/Desktop/Editors & IDEs"/*
+chown $USER:$USER "$HOME/Desktop/Utils"/*
+chown $USER:$USER "$HOME/Desktop/Docs"/*
 
 # ------------------- Copying Entries to the Folders
 

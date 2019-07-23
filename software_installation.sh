@@ -1,4 +1,14 @@
-# ***************** PREPARATION PHASE OF THE ENVIRONMEN
+#!/bin/bash
+
+# Bash script for building the IOI 2019 contest image | Software Installation Phase
+# Version: 1.2
+# http://ioi2019.az/
+
+
+
+set -xe
+
+# ************************************** PREPARATION PHASE OF THE ENVIRONMEN
 
 # ---------------------------- Updating sources.list file
 cat << EOF >/etc/apt/sources.list
@@ -89,12 +99,26 @@ apt -y install byobu=5.125-0ubuntu1
 # Sublime Text 3
 apt -y install sublime-text
 
-# Eclipse 2019-03(4.11) + JDT & CDT 9.8
-snap install --stable --classic
-# ---------- JDT
-
-# ---------- CDT 9.8
-
+# Eclipse 2019-03(4.11) + JDT & CDT 9.7
+wget eclipse.mirror.rafal.ca/technology/epp/downloads/release/2019-03/R/eclipse-java-2019-03-R-linux-gtk-x86_64.tar.gz
+tar xzvf eclipse-java-2019-03-R-linux-gtk-x86_64.tar.gz -C /opt/
+# ---------- CDT 9.7
+/opt/eclipse-4.11/eclipse -application org.eclipse.equinox.p2.director -noSplash -repository http://download.eclipse.org/releases/2019-03 \
+-installIUs \
+org.eclipse.cdt.feature.group,\
+org.eclipse.cdt.build.crossgcc.feature.group,\
+org.eclipse.cdt.launch.remote,\
+org.eclipse.cdt.gnu.multicorevisualizer.feature.group,\
+org.eclipse.cdt.testsrunner.feature.feature.group,\
+org.eclipse.cdt.visualizer.feature.group,\
+org.eclipse.cdt.debug.ui.memory.feature.group,\
+org.eclipse.cdt.autotools.core,\
+org.eclipse.cdt.autotools.feature.group,\
+org.eclipse.linuxtools.valgrind.feature.group,\
+org.eclipse.linuxtools.profiling.feature.group,\
+org.eclipse.remote.core,\
+org.eclipse.remote.feature.group
+ln -s /opt/eclipse-4.11/eclipse /usr/bin/eclipse
 
 
 # ------------------------- Debuggers
@@ -128,6 +152,7 @@ apt -y install python3=3.6.7-1~18.04
 apt -y install python3-pip
 pip3 install matplotlib
 
+
 # ---------------------------- Documentations
 apt -y install stl-manual openjdk-8-doc python2.7-doc python3.6-doc
 
@@ -135,6 +160,7 @@ apt -y install stl-manual openjdk-8-doc python2.7-doc python3.6-doc
 wget http://upload.cppreference.com/mwiki/images/7/78/html_book_20151129.zip
 unzip html_book_20151129.zip -d /opt/cppref
 rm -rf html_book_20151129.zip
+
 
 # ---------------------------- Other Software
 
@@ -146,6 +172,4 @@ apt -y install konsole=4:17.12.3-1ubuntu1
 
 # Midnight Commander 4.8.19
 apt -y install mc=3:4.8.19-1
-
-
 
