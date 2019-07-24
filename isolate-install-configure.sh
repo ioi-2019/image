@@ -4,6 +4,6 @@
 # Version: 1.2
 # http://ioi2019.az/
 
-# ./isolate-install-configure/system-isolation.sh
+./isolate-install-configure/system-isolation.sh
 ./isolate-install-configure/software-installation.sh
 ./isolate-install-configure/desktop-configuration.sh
