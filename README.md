@@ -22,3 +22,10 @@ Provisioning process is happening as follows:
 * **provision-csv.sh** - Variables are configured inside the script. Input is the output of **append-ip.sh**. Output is a DHCP conf file with MAC,IP reservations that should be copied to /etc/dhcp/. Then run: **sudo systemctl restart isc-dhcp-server**
 
 4. (OUTSTANDING) Get seat id by web service and add it as a new column: MAC, IP, seat.
+
+# Isolation-Installion-Configuration
+To install the IOI 2019 contestant image, follow the instructions below:
+* download and install Ubuntu 18.04(bionic beaver) into your computer
+* create an user under the name of contestant
+* run sudo ./isolate-install-configure.sh or sudo bash isolate-install-configure.sh
+

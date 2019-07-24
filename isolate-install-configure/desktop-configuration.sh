@@ -170,12 +170,12 @@ done
 # -------------------- End
 
 # ------------------- Changing ownership of the directories and .desktop files
-chown worker:worker "$HOME/Desktop/Editors & IDEs"
-chown worker:worker "$HOME/Desktop/Utils"
-chown worker:worker "$HOME/Desktop/Docs"
-chown worker:worker "$HOME/Desktop/Editors & IDEs"/*
-chown worker:worker "$HOME/Desktop/Utils"/*
-chown worker:worker "$HOME/Desktop/Docs"/*
+chown contestant:contestant "$HOME/Desktop/Editors & IDEs"
+chown contestant:contestant "$HOME/Desktop/Utils"
+chown contestant:contestant "$HOME/Desktop/Docs"
+chown contestant:contestant "$HOME/Desktop/Editors & IDEs"/*
+chown contestant:contestant "$HOME/Desktop/Utils"/*
+chown contestant:contestant "$HOME/Desktop/Docs"/*
 
 # -------------------- End
 
@@ -198,13 +198,13 @@ apt -y install xvfb
 # -------------------- End
 
 # -------------------- Acquiring background image
-wget -O /opt/wallpaper.png "https://github.com/ioi-2019/image/blob/master/ioi2019_wallpaper.png"
+wget -O /opt/ioi-2019-wallpaper.png "https://github.com/ioi-2019/image/blob/master/ioi-2019-wallpaper.png"
 
 # -------------------- Setting background image and others
 
 xvfb-run gsettings set org.gnome.desktop.background primary-color "#000000000000"
 xvfb-run gsettings set org.gnome.desktop.background picture-options "spanned"
-xvfb-run gsettings set org.gnome.desktop.background picture-uri "file:///opt/ioi2019_wallpaper.png"
+xvfb-run gsettings set org.gnome.desktop.background picture-uri "file:///opt/ioi-2019-wallpaper.png"
 
 # -------------------- End
 
