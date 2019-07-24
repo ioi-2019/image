@@ -4,18 +4,19 @@
 # Version: 1.2
 # http://ioi2019.az/
 
-
-
 set -xe
 
-# ************************************** PREPARATION PHASE OF THE ENVIRONMEN
+# ************************************** PREPARATION PHASE OF THE ENVIRONMENT
 
 # ---------------------------- Updating sources.list file
+
 cat << EOF >/etc/apt/sources.list
 deb http://archive.ubuntu.com/ubuntu/ bionic main restricted universe
 deb http://security.ubuntu.com/ubuntu/ bionic-security main restricted universe
 deb http://archive.ubuntu.com/ubuntu/ bionic-updates main restricted universe
 EOF
+
+# ---------------------------- End
 
 # ---------------------------- Adding Missing Repositories
 
@@ -29,11 +30,14 @@ add-apt-repository -y ppa:kelleyk/emacs
 add-apt-repository -y ppa:mmk2410/intellij-idea
 
 # Sublime Text 3
-# ---------install GPG key
+
+# --------- install GPG key
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-# ---------create add the repository in your sources.list
+
+# --------- create add the repository in your sources.list
 echo "deb https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.list.d/sublime-text.list
 
+# End
 
 # ----------------------------- Adding New Packege Control Systems
 apt -y install snap
@@ -44,10 +48,15 @@ apt -y update
 
 
 # ----------------------------- Upgrading the whole System
-apt -y upgrade
+# apt -y upgrade
 
 
-# ****************** INSTALLATION PHASE OF THE SOFTWARE PACKAGE
+# ---------------------------- End
+
+# ************************************** END
+
+
+# ************************************** INSTALLATION PHASE OF THE SOFTWARE PACKAGE
 
 # ----------------------------- Compilers
 apt -y install gcc=4:7.4.0-1ubuntu2.3 g++=4:7.4.0-1ubuntu2.3
@@ -62,9 +71,12 @@ apt -y install codeblocks=16.01+dfsg-2.1 codeblocks-contrib=16.01+dfsg-2.1
 snap install --stable --classic atom
 
 # Emacs 25.2.2
+
 apt -y install emacs25-common=25.2+1-6
 apt -y install emacs25-bin-common=25.2+1-6
 apt -y install emacs25=25.2+1-6
+
+# End
 
 # Geany 1.32 + geany-plugins
 apt -y install geany=1.32-2 geany-plugins
@@ -100,8 +112,10 @@ apt -y install byobu=5.125-0ubuntu1
 apt -y install sublime-text
 
 # Eclipse 2019-03(4.11) + JDT & CDT 9.7
+
 wget eclipse.mirror.rafal.ca/technology/epp/downloads/release/2019-03/R/eclipse-java-2019-03-R-linux-gtk-x86_64.tar.gz
 tar xzvf eclipse-java-2019-03-R-linux-gtk-x86_64.tar.gz -C /opt/
+mv /opt/eclipse /opt/eclipse-4.11
 rm -rf eclipse-java-2019-03-R-linux-gtk-x86_64.tar.gz
 
 # ---------- CDT 9.7
@@ -122,6 +136,9 @@ org.eclipse.remote.core,\
 org.eclipse.remote.feature.group
 ln -s /opt/eclipse-4.11/eclipse /usr/bin/eclipse
 
+# End
+
+# ------------------------- End
 
 # ------------------------- Debuggers
 
@@ -137,7 +154,7 @@ apt -y install valgrind=1:3.13.0-2ubuntu2.1
 # VisualVM 1.4.2
 apt -y install visualvm=1.4.2-2~18.04.1
 
-
+# ------------------------- End
 
 # ---------------------------- Interpreters
 
@@ -145,24 +162,36 @@ apt -y install visualvm=1.4.2-2~18.04.1
 apt -y install ruby=1:2.5.1 
 
 # Python 2.7.15 + mathplot
+
 apt -y install python=2.7.15~rc1-1
 apt -y install python-pip
 pip install matplotlib
 
+# End
+
 # Python 3.6.7 + mathplot
+
 apt -y install python3=3.6.7-1~18.04
 apt -y install python3-pip
 pip3 install matplotlib
 
+# End
+
+# ------------------------- End
 
 # ---------------------------- Documentations
+
 apt -y install stl-manual openjdk-8-doc python2.7-doc python3.6-doc
 
 # C/CPP reference
+
 wget http://upload.cppreference.com/mwiki/images/7/78/html_book_20151129.zip
 unzip html_book_20151129.zip -d /opt/cppref
 rm -rf html_book_20151129.zip
 
+# End
+
+# ------------------------- End
 
 # ---------------------------- Other Software
 
@@ -174,4 +203,8 @@ apt -y install konsole=4:17.12.3-1ubuntu1
 
 # Midnight Commander 4.8.19
 apt -y install mc=3:4.8.19-1
+
+# ------------------------- End
+
+# ************************************** END
 
