@@ -24,8 +24,8 @@ Provisioning process is happening as follows:
 4. (OUTSTANDING) Get seat id by web service and add it as a new column: MAC, IP, seat.
 
 # Isolation-Installion-Configuration
-To install the IOI 2019 contestant image, follow the instructions below:
-* download and install Ubuntu 18.04(bionic beaver) into your computer
-* create an user under the name of contestant
-* run sudo ./isolate-install-configure.sh or sudo bash isolate-install-configure.sh
+To install the **IOI 2019 contestant image**, follow the instructions below:
+* download and install **Ubuntu 18.04(bionic beaver)** into your computer
+* create an user under the name of **contestant**
+* run **sudo ./isolate-install-configure.sh** or **sudo bash isolate-install-configure.sh**
 
