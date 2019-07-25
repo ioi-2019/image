@@ -31,3 +31,6 @@ To install the **IOI 2019 contestant image**, follow the instructions below:
 * create an user under the name of **contestant**
 * run **sudo ./isolate-install-configure.sh** or **sudo bash isolate-install-configure.sh**
 
+# Relocation
+
+TODO
