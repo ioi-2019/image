@@ -2,7 +2,10 @@
 # Append random IP addresses to the CSV file
 #
 # Author: Ismayil Hasanov
-# Date	: 24 July 2019
+# Date	: 25 July 2019
+
+# Exit immediately if anything returns a non-zero status.
+set -e
 
 # Check for the passed argument
 if [ $# -eq 0 ]; then
