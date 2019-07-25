@@ -1,6 +1,8 @@
 ## Description of files
 
 # Backup
+**backup_service_setup.txt** shows the steps necessary to implement contestant backups. Here are the necessary files for this process:
+
 **backup.sh** - Zips contestant home folder and sends to a central location
 
 **clear-zip.sh** - Removes the zipped file before the next run of the service
