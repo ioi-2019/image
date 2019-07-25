@@ -3,7 +3,10 @@
 # from the given DHCP lease database
 #
 # Author: Ismayil Hasanov
-# Date	: 24 July 2019
+# Date	: 25 July 2019
+
+# Exit immediately if anything returns a non-zero status.
+set -e
 
 # Variables
 OUTPUT=ioi2019.csv
