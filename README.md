@@ -21,11 +21,11 @@ Provisioning process is happening as follows:
 1. Parse the DHCP lease file for MAC addresses
 * **parse-dhcp.sh** - Output is a CSV file with MAC per line called *ioi2019.csv*
 2. Assign IPs to these MAC addresses
-* **append-ip.sh** - Variables are configured inside the script. Input is the output of **parse-dhcp.sh**. Output is a CSV file with MAC,IP per line
+* **append-ip.sh** - Variables are configured inside the script. Input is the output of **parse-dhcp.sh**. Output is a CSV file with MAC,IP per line called *IP_ioi2019.csv*
 3. MAC,IP CSV file will be provisioned to DHCP
-* **provision-csv.sh** - Variables are configured inside the script. Input is the output of **append-ip.sh**. Output is a DHCP conf file with MAC,IP reservations that should be copied to /etc/dhcp/. Then run: **sudo systemctl restart isc-dhcp-server**
-
-4. (OUTSTANDING) Get seat id by web service and add it as a new column: MAC, IP, seat.
+* **provision-csv.sh** - Variables are configured inside the script. Input is the output of **append-ip.sh**. Output is a DHCP conf file with MAC,IP reservations (*contestant-static.conf*))that should be copied to /etc/dhcp/. Then run: `sudo systemctl restart isc-dhcp-server`
+4. Get seat id by web service and add it as a new column: MAC, IP, seat
+* `sudo cp IP_ioi2019.csv ../../../SeatLocator/data.csv` needs to be run to copy MAC,IP pair to seat web service. Everytime an update occurs to a location, DATA_Export.csv is the one which needs to be exported out of the web service. Relocation scripts will need this file.
 
 # Isolation-Installion-Configuration
 To install the **IOI 2019 contestant image**, follow the instructions below:
