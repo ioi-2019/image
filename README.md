@@ -19,7 +19,7 @@ Provisioning process is happening as follows:
 0. Flush the DHCP lease database (Danger: should only be done once thrroughout the event)
 * **flush-dhcp.sh** - Flushes the databae and gives out information
 1. Parse the DHCP lease file for MAC addresses
-* **parse-dhcp.sh** - Output is a CSV file with MAC per line
+* **parse-dhcp.sh** - Output is a CSV file with MAC per line called *ioi2019.csv*
 2. Assign IPs to these MAC addresses
 * **append-ip.sh** - Variables are configured inside the script. Input is the output of **parse-dhcp.sh**. Output is a CSV file with MAC,IP per line
 3. MAC,IP CSV file will be provisioned to DHCP
