@@ -16,6 +16,7 @@
 
 # Dhcp
 Provisioning process is happening as follows:
+
 0. Flush the DHCP lease database (Danger: should only be done once thrroughout the event)
 * **flush-dhcp.sh** - Flushes the databae and gives out information
 1. Parse the DHCP lease file for MAC addresses
@@ -29,7 +30,7 @@ Provisioning process is happening as follows:
 
 # Isolation-Installion-Configuration
 To install the **IOI 2019 contestant image**, follow the instructions below:
-* download and install **Ubuntu 18.04(bionic beaver)** into your computer
+* download and install **Ubuntu 18.04 (Bionic Beaver)** into your computer
 * create an user under the name of **contestant**
 * run **sudo ./isolate-install-configure.sh** or **sudo bash isolate-install-configure.sh**
 
