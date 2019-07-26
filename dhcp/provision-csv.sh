@@ -32,7 +32,7 @@ touch $OUTPUT
 # Read the CSV file and create a reservation per host
 client=1
 printf "#Reservations\n" >> $OUTPUT
-while IFS=, read mac ip
+while IFS=, read mac ip rest_of_the_fields
 do
 	echo "host client$client {" >> $OUTPUT
 	echo -e "\thardware ethernet $mac;" >> $OUTPUT
