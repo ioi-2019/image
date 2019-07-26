@@ -20,9 +20,6 @@ EOF
 
 # ---------------------------- Adding Missing Repositories
 
-# Code::Blocks
-#add-apt-repository -y ppa:damien-moore/codeblocks-stable
-
 # Emacs
 add-apt-repository -y ppa:kelleyk/emacs
 
@@ -39,16 +36,23 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.
 
 # End
 
-# ----------------------------- Adding New Packege Control Systems
-apt -y install snap
+
+# Atom
+
+# --------- install curl
+apt -y install curl
+
+# --------- install GPG key
+curl -sL https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
+
+# --------- add ppa to source.list.d
+sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
+
+# End
 
 
 # ----------------------------- Updating Package List
 apt -y update
-
-
-# ----------------------------- Upgrading the whole System
-# apt -y upgrade
 
 
 # ---------------------------- End
@@ -68,7 +72,7 @@ apt -y install openjdk-8-jdk openjdk-8-source
 apt -y install codeblocks=16.01+dfsg-2.1 codeblocks-contrib=16.01+dfsg-2.1
 
 # Atom 1.38.2
-snap install --stable --classic atom
+apt -y install atom=1.39.1
 
 # Emacs 25.2.2
 
@@ -118,7 +122,7 @@ tar xzvf eclipse-java-2019-03-R-linux-gtk-x86_64.tar.gz -C /opt/
 mv /opt/eclipse /opt/eclipse-4.11
 rm -rf eclipse-java-2019-03-R-linux-gtk-x86_64.tar.gz
 
-# ---------- CDT 9.7
+# ---------- CDT 9.7webupd8team/atom
 /opt/eclipse-4.11/eclipse -application org.eclipse.equinox.p2.director -noSplash -repository http://download.eclipse.org/releases/2019-03 \
 -installIUs \
 org.eclipse.cdt.feature.group,\

@@ -29,10 +29,10 @@ Provisioning process is happening as follows:
 * `sudo cp IP_ioi2019.csv ../../../SeatLocator/data.csv` needs to be run to copy MAC,IP pair to seat web service. Everytime an update occurs to a location, DATA_Export.csv is the one which needs to be exported out of the web service. Relocation scripts will need this file.
 
 # Isolation-Installation-Configuration
-To install the **IOI 2019 contestant image**, follow the instructions below:
-* download and install **Ubuntu 18.04 (Bionic Beaver)** into your computer
+To create an **IOI 2019 contestant image**, follow the instructions below:
+* download and install **Ubuntu 18.04 (Bionic Beaver)** into your computer machine
 * create an user under the name of **contestant**
-* run **sudo ./isolate-install-configure.sh** or **sudo bash isolate-install-configure.sh**
+* run either **sudo ./isolate-install-configure.sh** or **sudo bash isolate-install-configure.sh** command
 
 # Relocation
 
