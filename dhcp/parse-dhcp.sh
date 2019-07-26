@@ -11,4 +11,4 @@ set -e
 # Variables
 OUTPUT=ioi2019.csv
 
-cat /var/lib/dhcp/dhcpd.leases | grep "hardware ethernet" | awk '{print $3}' | cut -d";" -f1 | uniq >> $OUTPUT
+cat /var/lib/dhcp/dhcpd.leases | grep "hardware ethernet" | awk '{print $3}' | cut -d";" -f1 | sort -n | uniq > $OUTPUT

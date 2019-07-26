@@ -198,7 +198,7 @@ apt -y install xvfb
 # -------------------- End
 
 # -------------------- Acquiring background image
-wget -O /opt/ioi-2019-wallpaper.png "https://github.com/ioi-2019/image/blob/master/ioi-2019-wallpaper.png"
+wget -O /opt/ioi-2019-wallpaper.png "https://raw.githubusercontent.com/ioi-2019/image/master/ioi-2019-wallpaper.png"
 
 # -------------------- Setting background image and others
 
