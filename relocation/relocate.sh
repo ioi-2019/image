@@ -11,7 +11,7 @@ set -e
 dhcp_dir="/etc/dhcp/"
 file="reservations.conf"
 dhcp_conf=$dhcp_dir$file
-main_csv="export.csv"
+main_csv="../../../SeatLocator/DATA_Export.csv"
 spare_laptops="laptops.csv"
 
 # Backup the conf file
@@ -43,11 +43,11 @@ else # 2 arguments, good to go
 	# capitalize it for faster regexp match
 	seat=$1
 	seat=${seat^^}
-	seat_regex="^[A-H]-([1-9]|[1-3][0-9]|4[0-8])$"
+	seat_regex="^[A-H]([1-9]|[1-3][0-9]|4[0-8])$"
 	if [ $(echo $seat | egrep $seat_regex) ]; then
-		# search for the seat and extract mac
+		# search for the seat and extract mac (2nd field)
 		# from $main_csv
-		mac_addr=$(cat $main_csv | grep $seat | cut -d"," -f1)
+		mac_addr=$(cat $main_csv | grep $seat | cut -d"," -f2)
 		if [ ! -z $mac_addr ]; then
                 	old_mac=$mac_addr
 		else
