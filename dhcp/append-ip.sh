@@ -44,6 +44,6 @@ do
 		network=$(( network+1 ))
 	fi
 	IP=$prefix$network.$host
-	echo "$mac,$IP" >> $OUTPUT
+	echo "$mac,$IP,,,," >> $OUTPUT
 	host=$(( host+1 ))
 done < $INPUT
