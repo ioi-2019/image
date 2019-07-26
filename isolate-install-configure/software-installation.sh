@@ -122,7 +122,7 @@ tar xzvf eclipse-java-2019-03-R-linux-gtk-x86_64.tar.gz -C /opt/
 mv /opt/eclipse /opt/eclipse-4.11
 rm -rf eclipse-java-2019-03-R-linux-gtk-x86_64.tar.gz
 
-# ---------- CDT 9.7webupd8team/atom
+# ---------- CDT 9.7
 /opt/eclipse-4.11/eclipse -application org.eclipse.equinox.p2.director -noSplash -repository http://download.eclipse.org/releases/2019-03 \
 -installIUs \
 org.eclipse.cdt.feature.group,\
