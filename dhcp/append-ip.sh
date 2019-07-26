@@ -16,10 +16,10 @@ fi
 # Variables
 INPUT=$1
 OUTPUT=IP_$1
-range_begin=10
-range_end=210
+range_begin=150
+range_end=190
 host=$range_begin
-network=102
+network=20
 prefix="172.30."
 max_hosts=$(( (range_end-range_begin)*2 ))
 
