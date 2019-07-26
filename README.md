@@ -16,6 +16,8 @@
 
 # Dhcp
 Provisioning process is happening as follows:
+0. Flush the DHCP lease database (Danger: should only be done once thrroughout the event)
+* **flush-dhcp.sh** - Flushes the databae and gives out information
 1. Parse the DHCP lease file for MAC addresses
 * **parse-dhcp.sh** - Output is a CSV file with MAC per line
 2. Assign IPs to these MAC addresses
