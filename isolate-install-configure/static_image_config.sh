@@ -40,7 +40,7 @@ sudo sh -c 'echo "/org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-typ
 
 #disable wifi: 
 
-sudo sh -c 'echo blacklist wifi_module >> /etc/modprobe.d/blacklist.conf'
+sudo sh -c 'echo blacklist ath10k_pci >> /etc/modprobe.d/blacklist.conf'
 
 ############### need to know the name of wifi module, run lspci -nnk | grep -iA2 net
 
