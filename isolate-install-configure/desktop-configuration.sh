@@ -1,4 +1,4 @@
-d#!/bin/bash
+#!/bin/bash
 
 # Bash script for building the IOI 2019 contest image | Desktop Link Creation Phase
 # Version: 1.2
