@@ -42,7 +42,7 @@ sudo sh -c 'echo "/org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-typ
 
 sudo sh -c 'echo blacklist ath10k_pci >> /etc/modprobe.d/blacklist.conf'
 
-############### need to know the name of wifi module, run lspci -nnk | grep -iA2 net
+### run lspci -nnk | grep -iA2 net to get wifi module name
 
 
 #disable bluetooth
