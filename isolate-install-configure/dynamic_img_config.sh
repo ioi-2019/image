@@ -1,8 +1,6 @@
 #enable auto login
-sudo sed -i '/^\#AutomaticLoginEnable=true/s/#//' /etc/gdm3/custom.conf
-sudo sed -i '/^\#AutomaticLogin=/s/#//' /etc/gdm3/custom.conf
-
-##########check the contestant name in Automatic Login, add if doesnt exist
+sudo sed -i '/^\#  AutomaticLoginEnable =/s/#//' /etc/gdm3/custom.conf
+sudo sed -i '/^\#  AutomaticLogin =/s/#  AutomaticLogin = user1/  AutomaticLogin = contestant/' /etc/gdm3/custom.conf
 
 
 #install printer
@@ -32,12 +30,13 @@ sudo sh -c 'echo "[Unit]
 Description=Lock screen
 
 [Service]
-User=sevinj
+User=ansible
 Type=simple
 Restart=always
 RestartSec=60
 Environment=DISPLAY=:0
-ExecStart=/usr/bin/i3lock -i /home/sevinj/Desktop/lockscreen.png -u -n -t -c 000000
+#ExecStart=/usr/bin/i3lock -i /home/sevinj/Desktop/lockscreen.png -u -n -t -c 000000
+ExecStart=/usr/bin/i3lock -u -n -t -c 000000
 " >> /etc/systemd/system/i3lock.service'
 
 ##set bash script?
