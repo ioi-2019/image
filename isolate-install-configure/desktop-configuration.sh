@@ -110,23 +110,6 @@ EOF
 
 # End
 
-# Atom
-
-cat << EOF > atom.desktop
-[Desktop Entry]
-Version=1.38.2
-Type=Application
-Name=Atom
-Comment=Atom IDE
-Categories=TextEditor;IDE;
-Exec=/snap/bin/atom
-Icon=/snap/atom/232/usr/share/pixmaps/atom.png
-Terminal=false
-Categories=Development;IDE;
-EOF
-
-# End
-
 # -------------------- End
 
 # ----------------- Creating appropriet folders to locate entries on the desktop
