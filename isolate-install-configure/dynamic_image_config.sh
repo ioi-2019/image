@@ -34,7 +34,7 @@ User=ansible
 Type=simple
 Restart=always
 RestartSec=60
-Environment=DISPLAY=:0
+Environment=DISPLAY=':0.0'
 #ExecStart=/usr/bin/i3lock -i /home/sevinj/Desktop/lockscreen.png -u -n -t -c 000000
 ExecStart=/usr/bin/i3lock -u -n -t -c 000000
 " >> /etc/systemd/system/i3lock.service'
