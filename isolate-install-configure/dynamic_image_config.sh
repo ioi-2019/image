@@ -22,8 +22,10 @@ sudo sh -c 'echo blacklist uas >> /etc/modprobe.d/blacklist.conf'
 
 ###enable of usb storage script is on github
 
-#lock using i3lock
+# Disable access control for X11 (needed for i3lock and opening remote browser)
+sudo sh -c 'printf ("xhost +\n") >> /etc/profile'
 
+#lock using i3lock  
 sudo apt install i3lock
 touch /etc/systemd/system/i3lock.service
 sudo sh -c 'echo "[Unit]
@@ -35,7 +37,7 @@ Type=simple
 Restart=always
 RestartSec=60
 Environment=DISPLAY=':0.0'
-ExecStart=/usr/bin/i3lock -i /lockscreen.png -u -n -t -c 000000
+ExecStart=/usr/bin/i3lock -i /home/ansible/lockscreen.png -u -n -t -c 000000
 " >> /etc/systemd/system/i3lock.service'
 
 ##set bash script?
