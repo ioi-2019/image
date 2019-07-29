@@ -167,8 +167,8 @@ rm -rf html_book_20151129.zip
 # ------------------------- End
 
 # ---------------------------- Other Software
-# Firefox 68.0
-sudo apt -y install firefox=68.0+build3-0ubuntu0.18.04.1
+# Firefox 68.0.1
+sudo apt -y install firefox=68.0.1+build1-0ubuntu0.18.04.1
 
 # Konsole 17.12.3
 sudo apt -y install konsole=4:17.12.3-1ubuntu1
