@@ -1,21 +1,5 @@
 ## Description of files
 
-# Backup
-**backup_service_setup.txt** shows the steps necessary to implement contestant backups. It involves setting up the scripts, a service and a timer in the final image. Here are the necessary files for this process:
-
-**backup.sh** - Zips contestant home folder and sends to a central location
-
-**clear-zip.sh** - Removes the zipped file before the next run of the service
-
-**backup.service** - Systemd unit file maintaining the backup process
-
-**backup.timer** - 5min systemd timer file that needs to be enabled on contestant machines
-
-# Monitoring
-It is a manual step done for the agent installation in the final image. The next step is to discover the laptops in the Zabbix server and add them during the arena setup.
-
-**contestant_worker_zabbix_agent.txt** - Steps needed to install zabbix monitoring agent on laptops
-
 # Dhcp
 Provisioning process is happening as follows:
 
