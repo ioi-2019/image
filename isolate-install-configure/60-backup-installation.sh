@@ -9,9 +9,8 @@ set -xe
 # Copy files
 cp ./isolate-install-configure/backup/*.sh /home/ansible/
 chmod +x /home/ansible/*.sh
-cp ./isolate-install-configure/backup/backup.* /etc/systemd/system/
+sudo cp ./isolate-install-configure/backup/backup.service ./isolate-install-configure/backup/backup.service /etc/systemd/system/
 
 # Enable and start the timer
 sudo systemctl enable backup.timer
 sudo systemctl start backup.timer
-
