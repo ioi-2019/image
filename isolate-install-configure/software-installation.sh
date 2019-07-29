@@ -136,6 +136,8 @@ apt -y install valgrind=1:3.13.0-2ubuntu2.1
 
 # VisualVM 1.4.2
 apt -y install visualvm=1.4.2-2~18.04.1
+
+sudo update-java-alternatives --set /usr/lib/jvm/java-1.8.0-openjdk-amd64 #switch to jdk 8 version
 # ------------------------- End
 
 # ---------------------------- Interpreters
