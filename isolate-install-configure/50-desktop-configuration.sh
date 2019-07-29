@@ -106,7 +106,8 @@ sudo mkdir -p "$C_HOME/Desktop/Docs"
 
 # ------------------- Copying Entries to the Folders
 # Copy Editors and IDEs
-for i in atom codeblocks emacs25 geany gedit intellij-idea-community joe org.kde.kate org.kde.kdevelop sublime_text vim gvim
+for i in atom codeblocks emacs25 geany gedit intellij-idea-community joe \
+            org.kde.kate org.kde.kdevelop sublime_text vim gvim eclipse
 do
     sudo cp "$i.desktop" "$C_HOME/Desktop/Editors & IDEs"
 done
