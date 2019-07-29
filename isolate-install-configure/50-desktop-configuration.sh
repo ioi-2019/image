@@ -153,7 +153,7 @@ sudo wget -O /opt/ioi-2019-wallpaper.png "https://raw.githubusercontent.com/ioi-
 # -------------------- End
 
 # -------------------- Setting background image and others
-xvfb-run gsettings set org.gnome.desktop.background primary-color "#000000000000"
-xvfb-run gsettings set org.gnome.desktop.background picture-options "spanned"
-xvfb-run gsettings set org.gnome.desktop.background picture-uri "file:///opt/ioi-2019-wallpaper.png"
+sudo -Hu contestant xvfb-run gsettings set org.gnome.desktop.background primary-color "#000000000000"
+sudo -Hu contestant xvfb-run gsettings set org.gnome.desktop.background picture-options "spanned"
+sudo -Hu contestant xvfb-run gsettings set org.gnome.desktop.background picture-uri "file:///opt/ioi-2019-wallpaper.png"
 # -------------------- End
