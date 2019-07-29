@@ -1,3 +1,11 @@
+#!/bin/bash
+
+# Bash script for building the IOI 2019 contest image | CMS Isolate Requirements
+# Version: 1.3
+# http://ioi2019.az/
+
+set -xe
+
 # copy public key to ansible user's ssh folder
 sudo mkdir /home/ansible/.ssh
 sudo cp ./isolate-install-configure/authorized_keys /home/ansible/.ssh/authorized_keys
@@ -11,7 +19,7 @@ sudo lpadmin -p ioi_printer -E -v ipp://172.30.20.200:631/printers/ioi_printer -
 	
 # remove USB Storage Modules
 sudo touch /root/drivers/usb-storage.ko
-mv /lib/modules/$(uname -r)/kernel/drivers/usb/storage/usb-storage.ko /root/drivers/
+sudo mv /lib/modules/$(uname -r)/kernel/drivers/usb/storage/usb-storage.ko /root/drivers/
 
 sudo sh -c 'echo "rmmod usb
 rmmod usb_storage
@@ -28,8 +36,8 @@ sudo sh -c 'echo blacklist pcspkr >> /etc/modprobe.d/blacklist.conf'
 sudo sh -c 'printf ("xhost +\n") >> /etc/profile'
 
 # lock using i3lock  
-sudo apt install i3lock
-touch /etc/systemd/system/i3lock.service
+sudo apt -y install i3lock
+sudo touch /etc/systemd/system/i3lock.service
 sudo sh -c 'echo "[Unit]
 Description=Lock screen
 
