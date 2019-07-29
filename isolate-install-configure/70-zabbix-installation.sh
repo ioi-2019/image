@@ -1,27 +1,29 @@
-# Run these commands in root environment
+#!/bin/bash
 
-# Step 1
+# Bash script for building the IOI 2019 contest image | Monitoring Installation
+# Version: 1.0
+# http://ioi2019.az/
+
+set -xe
+
 # Add the repo and install the agent
 wget http://repo.zabbix.com/zabbix/4.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.2-1%2Bbionic_all.deb
-dpkg -i zabbix-release_4.2-1+bionic_all.deb
-apt update
-apt install zabbix-agent -y
+sudo dpkg -i zabbix-release_4.2-1+bionic_all.deb
+sudo apt update
+sudo apt -y install zabbix-agent
 
-# Step 2
 # Clear the config and add the necessary parameters
-echo "" > /etc/zabbix/zabbix_agentd.conf
-echo "
+sudo bash -c 'echo "
 PidFile=/var/run/zabbix/zabbix_agentd.pid
 LogFile=/var/log/zabbix/zabbix_agentd.log
 LogFileSize=0
 Server=172.30.20.99
 Hostname=monitoringsrv
 Include=/etc/zabbix/zabbix_agentd.d/*.conf
-" >> /etc/zabbix/zabbix_agentd.conf
+" > /etc/zabbix/zabbix_agentd.conf'
 
-# Step 3
 # Allow firewall (just in case) and restart the agent while adding to start-up
-ufw allow 10050/tcp
-systemctl restart zabbix-agent
-systemctl enable zabbix-agent
+sudo ufw allow 10050/tcp
+sudo systemctl restart zabbix-agent
+sudo systemctl enable zabbix-agent
 
