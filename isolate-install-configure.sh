@@ -9,3 +9,5 @@
 ./isolate-install-configure/30-dynamic-image-config.sh
 ./isolate-install-configure/40-software-installation.sh
 ./isolate-install-configure/50-desktop-configuration.sh
+./isolate-install-configure/60-backup-installation.sh
+./isolate-install-configure/70-zabbix-installation.sh
