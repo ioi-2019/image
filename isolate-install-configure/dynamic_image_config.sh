@@ -40,6 +40,5 @@ Environment=DISPLAY=':0.0'
 ExecStart=/usr/bin/i3lock -i /home/ansible/lockscreen.png -u -n -t -c 000000
 " >> /etc/systemd/system/i3lock.service'
 
-##set bash script?
-#disable script is on github
-##Pass
+# Copy locksreen.png
+sudo cp ./isolate-install-configure/lockscreen.png /home/ansible/lockscreen.png
