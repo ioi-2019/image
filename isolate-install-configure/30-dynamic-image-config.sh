@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Bash script for building the IOI 2019 contest image | CMS Isolate Requirements
+# Bash script for building the IOI 2019 contest image | Dynamic Requirements
 # Version: 1.3
 # http://ioi2019.az/
 
