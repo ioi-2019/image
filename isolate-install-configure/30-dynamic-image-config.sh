@@ -33,7 +33,7 @@ sudo bash -c 'echo blacklist uas >> /etc/modprobe.d/blacklist.conf'
 sudo bash -c 'echo blacklist pcspkr >> /etc/modprobe.d/blacklist.conf'
 
 # disable access control for X11 (needed for i3lock and opening remote browser)
-sudo bash -c 'printf ("xhost +\n") >> /etc/profile'
+sudo bash -c 'printf "xhost +\n" >> /etc/profile'
 
 # lock using i3lock  
 sudo apt -y install i3lock
