@@ -6,6 +6,9 @@
 
 set -xe
 
+# Run the following commands in a root environment
+sudo -s
+
 # ************************************** PREPARATION PHASE OF THE ENVIRONMENT
 
 # ---------------------------- Updating sources.list file
