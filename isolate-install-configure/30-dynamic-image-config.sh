@@ -21,6 +21,9 @@ sudo sh -c 'echo blacklist uas >> /etc/modprobe.d/blacklist.conf'
 
 ### enable of usb storage script is on github
 
+#disable speaker
+sudo sh -c 'echo blacklist pcspkr >> /etc/modprobe.d/blacklist.conf'
+
 # disable access control for X11 (needed for i3lock and opening remote browser)
 sudo sh -c 'printf ("xhost +\n") >> /etc/profile'
 
