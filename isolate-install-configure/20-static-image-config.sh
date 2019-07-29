@@ -1,3 +1,10 @@
+#!/bin/bash
+
+# Bash script for building the IOI 2019 contest image | Static configurations
+# Version: 1.3
+# http://ioi2019.az/
+
+set -xe
 
 #sleep mode off
 
