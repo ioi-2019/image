@@ -44,6 +44,15 @@ sudo sh -c 'echo "/org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-typ
 /org/gnome/desktop/session/lock-enabled
 /org/gnome/desktop/lockdown/disable-lock-screen" >> /etc/dconf/db/local.d/locks/disable-powersaving'
 
+#see the changes
+sudo touch /etc/dconf/profile/user
+sudo bash -c 'cat << EOF > /etc/dconf/profile/user
+user-db:user
+system-db:local
+EOF'
+
+sudo deconf update
+
 #disable wifi: 
 
 sudo sh -c 'echo blacklist ath10k_pci >> /etc/modprobe.d/blacklist.conf'
