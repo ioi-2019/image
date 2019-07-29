@@ -18,30 +18,30 @@ EOF'
 
 # ---------------------------- Adding Missing Repositories
 # Emacs
-add-apt-repository -y ppa:kelleyk/emacs
+sudo add-apt-repository -y ppa:kelleyk/emacs
 # Intellij Idea Community
-add-apt-repository -y ppa:mmk2410/intellij-idea
+sudo add-apt-repository -y ppa:mmk2410/intellij-idea
 # Sublime Text 3
 # --------- install GPG key
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 
 # --------- create add the repository in your sources.list
-echo "deb https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.list.d/sublime-text.list
+sudo bash -c 'echo "deb https://download.sublimetext.com/ apt/stable/" > /etc/apt/sources.list.d/sublime-text.list'
 
 # Atom
 # --------- install curl
-apt -y install curl
+sudo apt -y install curl
 
 # --------- install GPG key
 curl -sL https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
 
 # --------- add ppa to source.list.d
-sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
+sudo bash -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
 # End
 
 
 # ----------------------------- Updating Package List
-apt -y update
+sudo apt -y update
 # ---------------------------- End
 
 # ************************************** END
@@ -49,59 +49,59 @@ apt -y update
 # ************************************** INSTALLATION PHASE OF THE SOFTWARE PACKAGE
 
 # ----------------------------- Compilers
-apt -y install gcc=4:7.4.0-1ubuntu2.3 g++=4:7.4.0-1ubuntu2.3
-apt -y install openjdk-8-jdk openjdk-8-source
+sudo apt -y install gcc=4:7.4.0-1ubuntu2.3 g++=4:7.4.0-1ubuntu2.3
+sudo apt -y install openjdk-8-jdk openjdk-8-source
 
 # ----------------------------- Editors and IDEs
 # Code::Blocks 16.01(+codeblocks-contrib)
-apt -y install codeblocks=16.01+dfsg-2.1 codeblocks-contrib=16.01+dfsg-2.1
+sudo apt -y install codeblocks=16.01+dfsg-2.1 codeblocks-contrib=16.01+dfsg-2.1
 
 # Atom 1.38.2
-apt -y install atom=1.39.1
+sudo apt -y install atom=1.39.1
 
 # Emacs 25.2.2
-apt -y install emacs25-common=25.2+1-6
-apt -y install emacs25-bin-common=25.2+1-6
-apt -y install emacs25=25.2+1-6
+sudo apt -y install emacs25-common=25.2+1-6
+sudo apt -y install emacs25-bin-common=25.2+1-6
+sudo apt -y install emacs25=25.2+1-6
 # End
 
 # Geany 1.32 + geany-plugins
-apt -y install geany=1.32-2 geany-plugins
+sudo apt -y install geany=1.32-2 geany-plugins
 
 # Geany 3.28.1
-apt -y install gedit=3.28.1-1ubuntu1.2
+sudo apt -y install gedit=3.28.1-1ubuntu1.2
 
 # Joe 4.6
-apt -y install joe=4.6-1
+sudo apt -y install joe=4.6-1
 
 # Kate 17.12.3
-apt -y install kate=4:17.12.3-0ubuntu1
+sudo apt -y install kate=4:17.12.3-0ubuntu1
 
 # KDevelop 5.2.1
-apt -y install kdevelop=4:5.2.1-1ubuntu4
+sudo apt -y install kdevelop=4:5.2.1-1ubuntu4
 
 # Nano 2.9.3
-apt -y install nano=2.9.3-2
+sudo apt -y install nano=2.9.3-2
 
 # Vim 8.0 
-apt -y install vim=2:8.0.1453-1ubuntu1.1
+sudo apt -y install vim=2:8.0.1453-1ubuntu1.1
 
 # Vim-gnome 8.0
-apt -y install vim-gnome=2:8.0.1453-1ubuntu1.1
+sudo apt -y install vim-gnome=2:8.0.1453-1ubuntu1.1
 
 # IntelliJ IDEA Community 2019.2
-apt -y install intellij-idea-community=2019.2-1
+sudo apt -y install intellij-idea-community=2019.2-1
 
 # Byobu 5.125
-apt -y install byobu=5.125-0ubuntu1
+sudo apt -y install byobu=5.125-0ubuntu1
 
 # Sublime Text 3
-apt -y install sublime-text
+sudo apt -y install sublime-text
 
 # Eclipse 2019-03(4.11) + JDT & CDT 9.7
 wget eclipse.mirror.rafal.ca/technology/epp/downloads/release/2019-03/R/eclipse-java-2019-03-R-linux-gtk-x86_64.tar.gz
-tar xzvf eclipse-java-2019-03-R-linux-gtk-x86_64.tar.gz -C /opt/
-mv /opt/eclipse /opt/eclipse-4.11
+sudo tar xzvf eclipse-java-2019-03-R-linux-gtk-x86_64.tar.gz -C /opt/
+sudo mv /opt/eclipse /opt/eclipse-4.11
 rm -rf eclipse-java-2019-03-R-linux-gtk-x86_64.tar.gz
 
 # ---------- CDT 9.7
@@ -126,55 +126,55 @@ ln -s /opt/eclipse-4.11/eclipse /usr/bin/eclipse
 
 # ------------------------- Debuggers
 # GDB 8.1
-apt -y install gdb=8.1-0ubuntu3
+sudo apt -y install gdb=8.1-0ubuntu3
 
 # DDD 3.3.12
-apt -y install ddd=1:3.3.12-5.1build2
+sudo apt -y install ddd=1:3.3.12-5.1build2
 
 # Valgrind 3.13.0
-apt -y install valgrind=1:3.13.0-2ubuntu2.1
+sudo apt -y install valgrind=1:3.13.0-2ubuntu2.1
 
 # VisualVM 1.4.2
-apt -y install visualvm=1.4.2-2~18.04.1
+sudo apt -y install visualvm=1.4.2-2~18.04.1
 
 sudo update-java-alternatives --set /usr/lib/jvm/java-1.8.0-openjdk-amd64 #switch to jdk 8 version
 # ------------------------- End
 
 # ---------------------------- Interpreters
 # Ruby 2.5.1
-apt -y install ruby=1:2.5.1 
+sudo apt -y install ruby=1:2.5.1 
 
 # Python 2.7.15 + mathplot
-apt -y install python=2.7.15~rc1-1
-apt -y install python-pip
-pip install matplotlib
+sudo apt -y install python=2.7.15~rc1-1
+sudo apt -y install python-pip
+sudo pip install matplotlib
 
 # Python 3.6.7 + mathplot
-apt -y install python3=3.6.7-1~18.04
-apt -y install python3-pip
-pip3 install matplotlib
+sudo apt -y install python3=3.6.7-1~18.04
+sudo apt -y install python3-pip
+sudo pip3 install matplotlib
 # End
 
 # ------------------------- End
 
 # ---------------------------- Documentations
-apt -y install stl-manual openjdk-8-doc python2.7-doc python3.6-doc
+sudo apt -y install stl-manual openjdk-8-doc python2.7-doc python3.6-doc
 
 # C/CPP reference
 wget http://upload.cppreference.com/mwiki/images/7/78/html_book_20151129.zip
-unzip html_book_20151129.zip -d /opt/cppref
+sudo unzip html_book_20151129.zip -d /opt/cppref
 rm -rf html_book_20151129.zip
 # ------------------------- End
 
 # ---------------------------- Other Software
 # Firefox 68.0
-apt -y install firefox=68.0+build3-0ubuntu0.18.04.1
+sudo apt -y install firefox=68.0+build3-0ubuntu0.18.04.1
 
 # Konsole 17.12.3
-apt -y install konsole=4:17.12.3-1ubuntu1
+sudo apt -y install konsole=4:17.12.3-1ubuntu1
 
 # Midnight Commander 4.8.19
-apt -y install mc=3:4.8.19-1
+sudo apt -y install mc=3:4.8.19-1
 
 # ------------------------- End
 
