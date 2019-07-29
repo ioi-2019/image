@@ -7,8 +7,8 @@
 set -xe
 
 # copy public key to ansible user's ssh folder
-sudo mkdir /home/ansible/.ssh
-sudo cp ./isolate-install-configure/authorized_keys /home/ansible/.ssh/authorized_keys
+mkdir /home/ansible/.ssh
+cp ./isolate-install-configure/authorized_keys /home/ansible/.ssh/authorized_keys
 
 # enable auto login
 sudo sed -i '/^\#  AutomaticLoginEnable =/s/#//' /etc/gdm3/custom.conf
@@ -51,4 +51,4 @@ ExecStart=/usr/bin/i3lock -i /home/ansible/lockscreen.png -u -n -t -c 000000
 " >> /etc/systemd/system/i3lock.service'
 
 # copy locksreen.png
-sudo cp ./isolate-install-configure/lockscreen.png /home/ansible/lockscreen.png
+cp ./isolate-install-configure/lockscreen.png /home/ansible/lockscreen.png
