@@ -6,13 +6,10 @@
 
 set -xe
 
-# Run the following commands in a root environment
-sudo -s
-
 # ************************************** PREPARATION PHASE OF THE ENVIRONMENT
 
 # ---------------------------- Updating sources.list file
-cat << EOF >/etc/apt/sources.list
+sudo cat << EOF >/etc/apt/sources.list
 deb http://archive.ubuntu.com/ubuntu/ bionic main restricted universe
 deb http://security.ubuntu.com/ubuntu/ bionic-security main restricted universe
 deb http://archive.ubuntu.com/ubuntu/ bionic-updates main restricted universe
