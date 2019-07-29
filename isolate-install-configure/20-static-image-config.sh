@@ -38,7 +38,7 @@ user-db:user
 system-db:local
 EOF'
 
-sudo deconf update
+sudo dconf update
 
 # disable wifi: 
 
