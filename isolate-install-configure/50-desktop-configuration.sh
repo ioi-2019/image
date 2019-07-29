@@ -18,7 +18,7 @@ cd /usr/share/applications/
 
 # -------------------- Documentation
 # Python2.7 documentation entry
-cat << EOF > python2.7-doc.desktop
+sudo bash -c 'cat << EOF > python2.7-doc.desktop
 [Desktop Entry]
 Type=Application
 Name=Python 2.7 Documentation
@@ -27,11 +27,11 @@ Icon=firefox
 Exec=firefox /usr/share/doc/python2.7/html/index.html
 Terminal=false
 Categories=Documentation;Python2.7;
-EOF
+EOF'
 # End
 
 # Python3.6 documentation entry
-cat << EOF > python3.6-doc.desktop
+sudo bash -c 'cat << EOF > python3.6-doc.desktop
 [Desktop Entry]
 Type=Application
 Name=Python 3.6 Documentation
@@ -40,11 +40,11 @@ Icon=firefox
 Exec=firefox /usr/share/doc/python3.6/html/index.html
 Terminal=false
 Categories=Documentation;Python3.6;
-EOF
+EOF'
 # End
 
 # C/CPP documentation entry
-cat << EOF > c-cpp-doc.desktop
+sudo bash -c 'cat << EOF > c-cpp-doc.desktop
 [Desktop Entry]
 Type=Application
 Name=C/C++ Documentation
@@ -53,11 +53,11 @@ Icon=firefox
 Exec=firefox /opt/cppref/reference/en/index.html
 Terminal=false
 Categories=Documentation;C;C++;
-EOF
+EOF'
 # End
 
 # Java documentation entry
-cat << EOF > java-doc.desktop
+sudo bash -c 'cat << EOF > java-doc.desktop
 [Desktop Entry]
 Type=Application
 Name=Java Documentation
@@ -66,11 +66,11 @@ Icon=firefox
 Exec=firefox /usr/share/doc/openjdk-8-doc/api/index.html
 Terminal=false
 Categories=Documentation;Java;
-EOF
+EOF'
 # End
 
 # STL documentation entry
-cat << EOF > stl-manual.desktop
+sudo bash -c 'cat << EOF > stl-manual.desktop
 [Desktop Entry]
 Type=Application
 Name=STL Manual
@@ -79,13 +79,13 @@ Icon=firefox
 Exec=firefox /usr/share/doc/stl-manual/html/index.html
 Terminal=false
 Categories=Documentation;STL;
-EOF
+EOF'
 # End
 # -------------------- End
 
 # -------------------- Applications
 # Eclipse
-cat << EOF > eclipse.desktop
+sudo bash -c 'cat << EOF > eclipse.desktop
 [Desktop Entry]
 Type=Application
 Name=Eclipse Neon
@@ -94,52 +94,49 @@ Icon=/opt/eclipse-4.11/icon.xpm
 Exec=eclipse
 Terminal=false
 Categories=Development;IDE;Java;
-EOF
+EOF'
 # End
 # -------------------- End
 
-# ----------------- Creating appropriet folders to locate entries on the desktop
-mkdir -p "$C_HOME/Desktop/Editors & IDEs"
-mkdir -p "$C_HOME/Desktop/Utils"
-mkdir -p "$C_HOME/Desktop/Docs"
+# ----------------- Creating appropriate folders to locate entries on the desktop
+sudo mkdir -p "$C_HOME/Desktop/Editors & IDEs"
+sudo mkdir -p "$C_HOME/Desktop/Utils"
+sudo mkdir -p "$C_HOME/Desktop/Docs"
 # -------------------- End
 
 # ------------------- Copying Entries to the Folders
 # Copy Editors and IDEs
 for i in atom codeblocks emacs25 geany gedit intellij-idea-community joe org.kde.kate org.kde.kdevelop sublime_text vim gvim
 do
-    cp "$i.desktop" "$C_HOME/Desktop/Editors & IDEs"
+    sudo cp "$i.desktop" "$C_HOME/Desktop/Editors & IDEs"
 done
 # End
 
 # Copy Docs
 for i in c-cpp-doc stl-manual java-doc python2.7-doc python3.6-doc
 do
-    cp "$i.desktop" "$C_HOME/Desktop/Docs"
+    sudo cp "$i.desktop" "$C_HOME/Desktop/Docs"
 done
 # End
 
 # Copy Utils
 for i in firefox gnome-terminal org.kde.konsole mc byobu
 do
-    cp "$i.desktop" "$C_HOME/Desktop/Utils"
+    sudo cp "$i.desktop" "$C_HOME/Desktop/Utils"
 done
 # End
 # -------------------- End
 
 # ------------------- Changing ownership of the directories and .desktop files
-chown $C_USER:$C_GROUP "$C_HOME/Desktop/Editors & IDEs"
-chown $C_USER:$C_GROUP "$C_HOME/Desktop/Utils"
-chown $C_USER:$C_GROUP "$C_HOME/Desktop/Docs"
-chown $C_USER:$C_GROUP "$C_HOME/Desktop/Editors & IDEs"/*
-chown $C_USER:$C_GROUP "$C_HOME/Desktop/Utils"/*
-chown $C_USER:$C_GROUP "$C_HOME/Desktop/Docs"/*
+sudo chown -R $C_USER:$C_GROUP "$C_HOME/Desktop/Editors & IDEs"
+sudo chown -R $C_USER:$C_GROUP "$C_HOME/Desktop/Utils"
+sudo chown -R $C_USER:$C_GROUP "$C_HOME/Desktop/Docs"
 # -------------------- End
 
 # ------------------- Adding executative permission to all .desktop files
-chmod a+x "$C_HOME/Desktop/Editors & IDEs"/*
-chmod a+x "$C_HOME/Desktop/Utils"/*
-chmod a+x "$C_HOME/Desktop/Docs"/*
+sudo chmod a+x "$C_HOME/Desktop/Editors & IDEs"/*
+sudo chmod a+x "$C_HOME/Desktop/Utils"/*
+sudo chmod a+x "$C_HOME/Desktop/Docs"/*
 # -------------------- End
 
 # ******************************* END
@@ -147,11 +144,11 @@ chmod a+x "$C_HOME/Desktop/Docs"/*
 # ******************************* DESKTOP APPEARANCE CONFIGURATIONS
 
 # -------------------- Installation of required package
-apt -y install xvfb
+sudo apt -y install xvfb
 # -------------------- End
 
 # -------------------- Acquiring background image
-wget -O /opt/ioi-2019-wallpaper.png "https://raw.githubusercontent.com/ioi-2019/image/master/ioi-2019-wallpaper.png"
+sudo wget -O /opt/ioi-2019-wallpaper.png "https://raw.githubusercontent.com/ioi-2019/image/master/ioi-2019-wallpaper.png"
 # -------------------- End
 
 # -------------------- Setting background image and others
