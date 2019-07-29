@@ -25,20 +25,20 @@ sudo sh -c 'echo "rmmod usb
 rmmod usb_storage
 exit 0" >> /etc/rc.local'
 
-sudo sh -c 'echo blacklist uas >> /etc/modprobe.d/blacklist.conf'
+sudo bash -c 'echo blacklist uas >> /etc/modprobe.d/blacklist.conf'
 
 ### enable of usb storage script is on github
 
 #disable speaker
-sudo sh -c 'echo blacklist pcspkr >> /etc/modprobe.d/blacklist.conf'
+sudo bash -c 'echo blacklist pcspkr >> /etc/modprobe.d/blacklist.conf'
 
 # disable access control for X11 (needed for i3lock and opening remote browser)
-sudo sh -c 'printf ("xhost +\n") >> /etc/profile'
+sudo bash -c 'printf ("xhost +\n") >> /etc/profile'
 
 # lock using i3lock  
 sudo apt -y install i3lock
 sudo touch /etc/systemd/system/i3lock.service
-sudo sh -c 'echo "[Unit]
+sudo bash -c 'echo "[Unit]
 Description=Lock screen
 
 [Service]
