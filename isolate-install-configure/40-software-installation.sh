@@ -120,7 +120,7 @@ org.eclipse.linuxtools.valgrind.feature.group,\
 org.eclipse.linuxtools.profiling.feature.group,\
 org.eclipse.remote.core,\
 org.eclipse.remote.feature.group
-ln -s /opt/eclipse-4.11/eclipse /usr/bin/eclipse
+sudo ln -s /opt/eclipse-4.11/eclipse /usr/bin/eclipse
 # End
 # ------------------------- End
 
