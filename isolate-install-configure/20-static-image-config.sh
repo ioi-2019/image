@@ -14,7 +14,7 @@ gsettings set org.gnome.desktop.session idle-delay 0
 
 sudo mkdir /etc/dconf/db/local.d
 sudo touch /etc/dconf/db/local.d/10-disable-powersaving  /etc/dconf/db/local.d/10-universal-access
-sudo cp ./isolate-install-configure/dconf.file /etc/dconf/db/local.d/locks/10-disable-powersaving
+sudo cp ./isolate-install-configure/dconf.file /etc/dconf/db/local.d/10-disable-powersaving
 
 #sudo sh -c 'echo "[org/gnome/settings-daemon/plugins/power]
 #sleep-inactive-ac-type='nothing'
@@ -31,7 +31,7 @@ sudo cp ./isolate-install-configure/dconf.file /etc/dconf/db/local.d/locks/10-di
 
 #add rules
 sudo sh -c 'echo "[org/gnome/desktop/a11y]
-always-show-universal-access-status=true" >> /etc/dconf/db/local.d/locks/10-disable-powersaving/10-universal-access'
+always-show-universal-access-status=true" >> /etc/dconf/db/local.d/10-universal-access'
 
 #manage above files with lock directory
 sudo mkdir /etc/dconf/db/local.d/locks
