@@ -19,7 +19,7 @@ sudo lpadmin -p ioi_printer -E -v ipp://172.30.20.200:631/printers/ioi_printer -
 	
 # remove USB Storage Modules
 mkdir /home/ansible/drivers
-mv /lib/modules/$(uname -r)/kernel/drivers/usb/storage/usb-storage.ko /home/ansible/drivers/usb-storage.ko
+sudo mv /lib/modules/$(uname -r)/kernel/drivers/usb/storage/usb-storage.ko /home/ansible/drivers/usb-storage.ko
 
 sudo sh -c 'echo "rmmod usb
 rmmod usb_storage
