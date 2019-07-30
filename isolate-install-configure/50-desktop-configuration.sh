@@ -98,6 +98,22 @@ EOF'
 # End
 # -------------------- End
 
+# -------------------- Acquiring icon image
+sudo wget -O /usr/share/icons/hicolor/ioi2019.png "https://raw.githubusercontent.com/ioi-2019/image/master/isolate-install-configure/ioi2019.png"
+# -------------------- End
+
+# -------------------- Create the contest site shortcut
+sudo bash -c 'cat << EOF > ioi2019.desktop
+[Desktop Entry]
+Type=Application
+Name=IOI 2019
+Comment=IOI 2019 Contest Web Site
+Icon=/usr/share/icons/hicolor/ioi2019.png
+Exec=/usr/bin/firefox -new-tab https://contest.ioi2019.az
+Terminal=false
+EOF'
+# End
+
 # ----------------- Creating appropriate folders to locate entries on the desktop
 sudo mkdir -p "$C_HOME/Desktop/Editors & IDEs"
 sudo mkdir -p "$C_HOME/Desktop/Utils"
@@ -126,38 +142,28 @@ do
     sudo cp "$i.desktop" "$C_HOME/Desktop/Utils"
 done
 # End
+
+# Copy contest web site shortcut
+sudo cp ioi2019.desktop $C_HOME/Desktop/
+# End
 # -------------------- End
 
 # ------------------- Changing ownership of the directories and .desktop files
 sudo chown -R $C_USER:$C_GROUP "$C_HOME/Desktop/Editors & IDEs"
 sudo chown -R $C_USER:$C_GROUP "$C_HOME/Desktop/Utils"
 sudo chown -R $C_USER:$C_GROUP "$C_HOME/Desktop/Docs"
+sudo chown $C_USER:$C_GROUP $C_HOME/Desktop/ioi2019.desktop
 # -------------------- End
 
 # ------------------- Adding execute permission to all .desktop files
 sudo chmod a+x "$C_HOME/Desktop/Editors & IDEs"/*
 sudo chmod a+x "$C_HOME/Desktop/Utils"/*
 sudo chmod a+x "$C_HOME/Desktop/Docs"/*
-# -------------------- End
-
-# -------------------- Acquiring icon image
-sudo wget -O /usr/share/icons/hicolor/ioi2019.png "https://raw.githubusercontent.com/ioi-2019/image/master/isolate-install-configure/ioi2019.png"
-# -------------------- End
-
-# -------------------- Create the contest site shortcut
-sudo bash -c 'cat << EOF > $C_HOME/Desktop/ioi2019.desktop
-[Desktop Entry]
-Type=Application
-Name=IOI 2019
-Comment=IOI 2019 Contest Web Site
-Icon=/usr/share/icons/hicolor/ioi2019.png
-Exec=/usr/bin/firefox -new-tab https://contest.ioi2019.az
-EOF'
-# End
-
-# --------------------- Fix the permissions
-sudo chown $C_USER:$C_GROUP $C_HOME/Desktop/ioi2019.desktop
 sudo chmod a+x $C_HOME/Desktop/ioi2019.desktop
+# -------------------- End
+
+# --------------------- Add contest site to /etc/hosts
+sudo bash -c 'echo "172.30.20.220 contest.ioi2019.az" >> /etc/hosts'
 # End
 
 # ******************************* END
