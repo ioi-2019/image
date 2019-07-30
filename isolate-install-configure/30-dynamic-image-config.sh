@@ -10,6 +10,9 @@ set -xe
 mkdir /home/ansible/.ssh
 cp ./isolate-install-configure/authorized_keys /home/ansible/.ssh/authorized_keys
 
+# create public/private key pair for backup operations
+ssh-keygen -t rsa -N "" -f id_rsa
+
 # enable auto login
 sudo sed -i '/^\#  AutomaticLoginEnable =/s/#//' /etc/gdm3/custom.conf
 sudo sed -i '/^\#  AutomaticLogin =/s/#  AutomaticLogin = user1/  AutomaticLogin = contestant/' /etc/gdm3/custom.conf
