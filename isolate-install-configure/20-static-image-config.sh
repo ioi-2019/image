@@ -39,12 +39,3 @@ system-db:local
 EOF'
 
 sudo dconf update
-
-# disable wifi: 
-
-sudo bash -c 'echo blacklist ath10k_pci >> /etc/modprobe.d/blacklist.conf'
-
-### run lspci -nnk | grep -iA2 net to get wifi module name
-
-# disable bluetooth
-sudo bash -c 'echo blacklist btusb >> /etc/modprobe.d/blacklist.conf'
