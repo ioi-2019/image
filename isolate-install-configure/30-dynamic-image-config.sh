@@ -6,10 +6,6 @@
 
 set -xe
 
-# copy public key to ansible user's ssh folder
-mkdir /home/ansible/.ssh
-cp ./isolate-install-configure/authorized_keys /home/ansible/.ssh/authorized_keys
-
 # create public/private key pair for backup operations
 ssh-keygen -t rsa -N "" -f id_rsa
 
