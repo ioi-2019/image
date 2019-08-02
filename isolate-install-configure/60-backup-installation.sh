@@ -8,6 +8,7 @@ set -xe
 
 # Copy files
 cp ./isolate-install-configure/backup/*.sh /home/ansible/
+cp ./isolate-install-configure/backup/exclude /home/ansible/
 chmod +x /home/ansible/*.sh
 sudo cp ./isolate-install-configure/backup/backup.service ./isolate-install-configure/backup/backup.timer /etc/systemd/system/
 
