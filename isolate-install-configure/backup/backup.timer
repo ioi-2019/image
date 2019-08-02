@@ -2,7 +2,7 @@
 Description=Contestant home folder backup timer
 
 [Timer]
-OnUnitActiveSec=5m
+OnUnitActiveSec=10m
 OnBootSec=10s
 Unit=backup.service
 
