@@ -6,5 +6,4 @@ After=network-online.target
 [Service]
 User=ansible
 ExecStart=/bin/bash /home/ansible/backup.sh
-ExecStop=/bin/bash /home/ansible/clear-zip.sh
 StandardOutput=journal
