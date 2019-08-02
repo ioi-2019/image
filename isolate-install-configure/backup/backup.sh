@@ -11,4 +11,4 @@ SRC=/home/contestant
 DST=ioibckp@172.30.20.70:/backup/$IP4
 
 # Next, rsync the source folder to the backup server
-rsync -a -z $ZIP $DST
+rsync -azlt --max-size=10m --exclude-from=./exclude $SRC $DST
