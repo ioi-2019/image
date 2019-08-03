@@ -52,5 +52,5 @@ ExecStart=/usr/bin/i3lock -i /home/ansible/lockscreen.png -u -n -t -c 000000
 # copy locksreen.png
 cp ./isolate-install-configure/lockscreen.png /home/ansible/lockscreen.png
 
-#install ssh
-sudo apt install openssh-server
+# install ssh
+sudo apt -y install openssh-server
