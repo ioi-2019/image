@@ -18,29 +18,29 @@ cd /usr/share/applications/
 
 # -------------------- Documentation
 # Python2.7 documentation entry
-sudo bash -c 'cat << EOF > python2.7-doc.desktop
-[Desktop Entry]
-Type=Application
-Name=Python 2.7 Documentation
-Comment=Python 2.7 Documentation
-Icon=firefox
-Exec=firefox /usr/share/doc/python2.7/html/index.html
-Terminal=false
-Categories=Documentation;Python2.7;
-EOF'
+#sudo bash -c 'cat << EOF > python2.7-doc.desktop
+#[Desktop Entry]
+#Type=Application
+#Name=Python 2.7 Documentation
+#Comment=Python 2.7 Documentation
+#Icon=firefox
+#Exec=firefox /usr/share/doc/python2.7/html/index.html
+#Terminal=false
+#Categories=Documentation;Python2.7;
+#EOF'
 # End
 
 # Python3.6 documentation entry
-sudo bash -c 'cat << EOF > python3.6-doc.desktop
-[Desktop Entry]
-Type=Application
-Name=Python 3.6 Documentation
-Comment=Python 3.6 Documentation
-Icon=firefox
-Exec=firefox /usr/share/doc/python3.6/html/index.html
-Terminal=false
-Categories=Documentation;Python3.6;
-EOF'
+#sudo bash -c 'cat << EOF > python3.6-doc.desktop
+#[Desktop Entry]
+#Type=Application
+#Name=Python 3.6 Documentation
+#Comment=Python 3.6 Documentation
+#Icon=firefox
+#Exec=firefox /usr/share/doc/python3.6/html/index.html
+#Terminal=false
+#Categories=Documentation;Python3.6;
+#EOF'
 # End
 
 # C/CPP documentation entry
