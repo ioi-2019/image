@@ -15,4 +15,4 @@ DST=$SRV:$FOLDER
 # Make sure the backup directory is created
 ssh $SRV "mkdir -p $FOLDER"
 # Next, rsync the source folder to the backup server
-rsync -azlt --max-size=10m --exclude-from=/home/ansible/exclude $SRC $DST
+rsync -az --max-size=10m --exclude-from=/home/ansible/exclude $SRC $DST
