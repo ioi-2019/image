@@ -183,3 +183,7 @@ sudo -Hu contestant xvfb-run gsettings set org.gnome.desktop.background primary-
 sudo -Hu contestant xvfb-run gsettings set org.gnome.desktop.background picture-options "spanned"
 sudo -Hu contestant xvfb-run gsettings set org.gnome.desktop.background picture-uri "file:///opt/ioi-2019-wallpaper.png"
 # -------------------- End
+
+
+#---------------Create a folder on desktop for last minute incidental submission
+sudo mkdir /home/contestant/Desktop/incidental_submissions
