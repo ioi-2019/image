@@ -7,7 +7,7 @@
 set -xe
 
 # Variables
-C_HOME="/home/contestant"
+C_HOME=/home/contestant
 C_USER=contestant
 C_GROUP=contestant
 
@@ -184,6 +184,11 @@ sudo -Hu contestant xvfb-run gsettings set org.gnome.desktop.background picture-
 sudo -Hu contestant xvfb-run gsettings set org.gnome.desktop.background picture-uri "file:///opt/ioi-2019-wallpaper.png"
 # -------------------- End
 
+# ******************************* ADDITIONS DURING IOI2019
 
-#---------------Create a folder on desktop for last minute incidental submission
-sudo mkdir /home/contestant/Desktop/incidental_submissions
+#---------------Create a folder on desktop for last minute submission in case CMS is down
+sudo mkdir "$C_HOME/Emergency Submissions"
+sudo ln -s "$C_HOME/Emergency Submissions" "$C_HOME/Desktop/Emergency Submissions"
+sudo chown -R $C_USER:$C_GROUP "$C_HOME/Emergency Submissions"
+# -------------------- End
+# ******************************* END
